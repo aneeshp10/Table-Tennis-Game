@@ -27,9 +27,12 @@ paddleTwo.goto(350, 0)
 # Ball
 ball = turtle.Turtle()
 ball.speed(0)
-ball.shape("circle")
+ball.shape("square")
+ball.color("white")
 ball.penup()
-ball.color("green")
+ball.goto(0, 0)
+ball.dx = 0.5
+ball.dy = -0.5
 
 # left bat going up
 def paddleOneUp():
@@ -64,3 +67,22 @@ wn.onkeypress(paddleTwoDown, "Down")
 
 while True:
     wn.update()
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
+
+    # Border Check
+    if ball.ycor() > 290:
+        ball.sety(290)
+        ball.dy = ball.dy * -1
+
+    if ball.ycor() < -290:
+        ball.sety(-290)
+        ball.dy = ball.dy * -1
+
+    if ball.xcor() > 390:
+        ball.setx(390)
+        ball.dx = ball.dx * -1
+
+    if ball.xcor() < -390:
+        ball.setx(-390)
+        ball.dx = ball.dx * -1
