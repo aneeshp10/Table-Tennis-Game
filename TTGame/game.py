@@ -11,18 +11,20 @@ paddleOne = turtle.Turtle()
 paddleOne.speed(0)
 paddleOne.shape("square")
 paddleOne.color("green")
-paddleOne.shapesize(stretch_wid=5, stretch_len=1)
 paddleOne.penup()
 paddleOne.goto(-350, 0)
+paddleOne.shapesize(stretch_wid=3, stretch_len=1)
+
 
 # Paddle B
 paddleTwo = turtle.Turtle()
 paddleTwo.speed(0)
 paddleTwo.shape("square")
 paddleTwo.color("green")
-paddleTwo.shapesize(stretch_wid=5, stretch_len=1)
 paddleTwo.penup()
 paddleTwo.goto(350, 0)
+paddleTwo.shapesize(stretch_wid=3, stretch_len=1)
+
 
 # Ball
 ball = turtle.Turtle()
@@ -42,7 +44,7 @@ score.color("white")
 score.penup()
 score.hideturtle()
 score.goto(0, 255)
-score.write("Player 1: 0                                            Player 2: 0",
+score.write("Player 1: 0                                              Player 2: 0",
             align="center", font=("Georgia", 24, "bold"))
 
 winner = turtle.Turtle()
@@ -113,7 +115,7 @@ while True:
             ball.dx = 0
             ball.dy = 0
 
-        score.write("Player 1: {}                                            Player 2: {}".format(
+        score.write("Player 1: {}                                              Player 2: {}".format(
             playerOne, playerTwo), align="center", font=("Georgia", 24, "bold"))
         ball.goto(0, 0)
         ball.dx = ball.dx * -1
@@ -128,7 +130,7 @@ while True:
             ball.dx = 0
             ball.dy = 0
 
-        score.write("Player 1: {}                                            Player 2: {}".format(
+        score.write("Player 1: {}                                              Player 2: {}".format(
             playerOne, playerTwo), align="center", font=("Georgia", 24, "bold"))
 
         ball.goto(0, 0)
