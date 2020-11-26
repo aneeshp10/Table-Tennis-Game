@@ -34,6 +34,13 @@ ball.goto(0, 0)
 ball.dx = 0.2
 ball.dy = -0.2
 
+score = turtle.Turtle()
+score.color("white")
+score.penup()
+score.hideturtle()
+score.goto(0,255)
+score.write("Player 1: 0                                            Player 2: 0", align="center", font=("Georgia", 24, "bold"))
+
 # left bat going up
 def paddleOneUp():
     y = paddleOne.ycor()
