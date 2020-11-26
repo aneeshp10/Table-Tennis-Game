@@ -80,9 +80,9 @@ while True:
         ball.dy = ball.dy * -1
 
     if ball.xcor() > 390:
-        ball.setx(390)
+        ball.goto(0,0)
         ball.dx = ball.dx * -1
 
     if ball.xcor() < -390:
-        ball.setx(-390)
+        ball.goto(0,0)
         ball.dx = ball.dx * -1
