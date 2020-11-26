@@ -93,3 +93,9 @@ while True:
             if (paddleTwo.ycor() - 40 < ball.ycor() < paddleTwo.ycor() + 40) :
                 ball.setx(340)
                 ball.dx = ball.dx * - 1
+
+    if (ball.xcor() < -340) :
+        if (ball.xcor() > -350) :
+            if (paddleOne.ycor() - 40 < ball.ycor() < paddleOne.ycor() + 40) :
+                ball.setx(-340)
+                ball.dx = ball.dx * - 1
