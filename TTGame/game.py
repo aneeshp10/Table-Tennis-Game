@@ -44,6 +44,12 @@ score.hideturtle()
 score.goto(0,255)
 score.write("Player 1: 0                                            Player 2: 0", align="center", font=("Georgia", 24, "bold"))
 
+winner = turtle.Turtle()
+winner.hideturtle()
+winner.penup()
+winner.goto(0,-50)
+winner.color("white")
+
 # left bat going up
 def paddleOneUp():
     y = paddleOne.ycor()
@@ -92,6 +98,12 @@ while True:
     if ball.xcor() > 390:
         playerOne+=1
         score.clear()
+        if (playerOne == 7) :
+            winner.write("Player One Wins", align="center", font=("Georgia", 24, "normal"))
+            ball.color("blue")
+            ball.dx = 0
+            ball.dy = 0
+        
         score.write("Player 1: {}                                            Player 2: {}".format(playerOne, playerTwo), align="center", font=("Georgia", 24, "bold"))
         ball.goto(0,0)
         ball.dx = ball.dx * -1
@@ -99,7 +111,14 @@ while True:
     if ball.xcor() < -390:
         playerTwo+=1
         score.clear()
+        if (playerTwo == 7) :
+            winner.write("Player Two Wins", align="center", font=("Georgia", 24, "normal"))
+            ball.color("blue")
+            ball.dx = 0
+            ball.dy = 0
+
         score.write("Player 1: {}                                            Player 2: {}".format(playerOne, playerTwo), align="center", font=("Georgia", 24, "bold"))
+        
         ball.goto(0,0)
         ball.dx = ball.dx * -1
 
