@@ -34,6 +34,9 @@ ball.goto(0, 0)
 ball.dx = 0.2
 ball.dy = -0.2
 
+playerOne = 0
+playerTwo = 0
+
 score = turtle.Turtle()
 score.color("white")
 score.penup()
@@ -87,10 +90,16 @@ while True:
         ball.dy = ball.dy * -1
 
     if ball.xcor() > 390:
+        playerOne+=1
+        score.clear()
+        score.write("Player 1: {}                                            Player 2: {}".format(playerOne, playerTwo), align="center", font=("Georgia", 24, "bold"))
         ball.goto(0,0)
         ball.dx = ball.dx * -1
 
     if ball.xcor() < -390:
+        playerTwo+=1
+        score.clear()
+        score.write("Player 1: {}                                            Player 2: {}".format(playerOne, playerTwo), align="center", font=("Georgia", 24, "bold"))
         ball.goto(0,0)
         ball.dx = ball.dx * -1
 
