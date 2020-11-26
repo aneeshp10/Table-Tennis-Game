@@ -31,8 +31,8 @@ ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 0.5
-ball.dy = -0.5
+ball.dx = 0.2
+ball.dy = -0.2
 
 # left bat going up
 def paddleOneUp():
@@ -86,3 +86,10 @@ while True:
     if ball.xcor() < -390:
         ball.goto(0,0)
         ball.dx = ball.dx * -1
+
+    # Collisions
+    if (ball.xcor() > 340) :
+        if (ball.xcor() < 350) :
+            if (paddleTwo.ycor() - 40 < ball.ycor() < paddleTwo.ycor() + 40) :
+                ball.setx(340)
+                ball.dx = ball.dx * - 1
